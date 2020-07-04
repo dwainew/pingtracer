@@ -70,7 +70,7 @@ namespace PingTracer
             panelForm.Text = this.Text;
             panelForm.Icon = this.Icon;
             panelForm.FormClosing += panelForm_FormClosing;
-            selectPingsPerSecond.SelectedIndex = 0;
+            comboPingsPerSecond.SelectedIndex = 0;
             settings.Load();
             lock (settings.hostHistory)
             {
@@ -400,12 +400,12 @@ namespace PingTracer
         {
             try
             {
-                if (lblSuccessful.InvokeRequired)
-                    lblSuccessful.Invoke(new Action<long, long>(UpdatePingCounts), successful, failed);
+                if (lblReplSuccessful.InvokeRequired)
+                    lblReplSuccessful.Invoke(new Action<long, long>(UpdatePingCounts), successful, failed);
                 else
                 {
-                    lblSuccessful.Text = successful.ToString();
-                    lblFailed.Text = failed.ToString();
+                    toolStripSuccessValue.Text = successful.ToString();
+                    toolStripFailValue.Text = failed.ToString();
                 }
             }
             catch (Exception)
@@ -527,7 +527,7 @@ namespace PingTracer
             SaveProfileIfProfileAlreadyExists();
             if (nudPingsPerSecond.Value == 0)
                 pingDelay = 0;
-            else if (selectPingsPerSecond.SelectedIndex == 0)
+            else if (comboPingsPerSecond.SelectedIndex == 0)
                 pingDelay = Math.Max(100, (int)(1000 / nudPingsPerSecond.Value));
             else
                 pingDelay = Math.Max(100, (int)(1000 * nudPingsPerSecond.Value));
@@ -535,7 +535,7 @@ namespace PingTracer
 
         private void selectPingsPerSecond_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (selectPingsPerSecond.SelectedIndex == 0)
+            if (comboPingsPerSecond.SelectedIndex == 0)
                 nudPingsPerSecond.Maximum = 10;
             else
                 nudPingsPerSecond.Maximum = 600;
@@ -827,7 +827,7 @@ namespace PingTracer
             txtHost.Text = hs.host;
             txtDisplayName.Text = hs.displayName;
             nudPingsPerSecond.Value = hs.rate;
-            selectPingsPerSecond.SelectedIndex = hs.pingsPerSecond ? 0 : 1;
+            comboPingsPerSecond.SelectedIndex = hs.pingsPerSecond ? 0 : 1;
             cbTraceroute.Checked = hs.doTraceRoute;
             cbReverseDNS.Checked = hs.reverseDnsLookup;
             cbAlwaysShowServerNames.Checked = hs.drawServerNames;
@@ -899,7 +899,7 @@ namespace PingTracer
             p.host = txtHost.Text;
             p.displayName = txtDisplayName.Text;
             p.rate = (int)nudPingsPerSecond.Value;
-            p.pingsPerSecond = selectPingsPerSecond.SelectedIndex == 0;
+            p.pingsPerSecond = comboPingsPerSecond.SelectedIndex == 0;
             p.doTraceRoute = cbTraceroute.Checked;
             p.reverseDnsLookup = cbReverseDNS.Checked;
             p.drawServerNames = cbAlwaysShowServerNames.Checked;

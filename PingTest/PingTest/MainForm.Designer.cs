@@ -35,30 +35,26 @@
             this.label2 = new System.Windows.Forms.Label();
             this.nudPingsPerSecond = new System.Windows.Forms.NumericUpDown();
             this.btnStart = new System.Windows.Forms.Button();
-            this.label4 = new System.Windows.Forms.Label();
-            this.lblSuccessful = new System.Windows.Forms.Label();
-            this.lblFailed = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
+            this.lblReplSuccessful = new System.Windows.Forms.Label();
+            this.lblReplFailed = new System.Windows.Forms.Label();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.panel_Graphs = new System.Windows.Forms.Panel();
-            this.label5 = new System.Windows.Forms.Label();
-            this.lblHoveredPingStatus = new System.Windows.Forms.Label();
+            this.labelGraphIntro = new System.Windows.Forms.Label();
             this.cbTraceroute = new System.Windows.Forms.CheckBox();
-            this.label6 = new System.Windows.Forms.Label();
             this.contextMenuStripHostHistory = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.label1 = new System.Windows.Forms.Label();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.txtDisplayName = new System.Windows.Forms.TextBox();
             this.cbReverseDNS = new System.Windows.Forms.CheckBox();
             this.menuMain = new System.Windows.Forms.MainMenu(this.components);
-            this.menuItemFile = new System.Windows.Forms.MenuItem();
-            this.mi_Exit = new System.Windows.Forms.MenuItem();
-            this.menuItemExport = new System.Windows.Forms.MenuItem();
-            this.mi_snapshotGraphs = new System.Windows.Forms.MenuItem();
-            this.menuItemTools = new System.Windows.Forms.MenuItem();
-            this.mi_Options = new System.Windows.Forms.MenuItem();
-            this.mi_deleteHost = new System.Windows.Forms.MenuItem();
-            this.selectPingsPerSecond = new System.Windows.Forms.ComboBox();
+            this.mi_File = new System.Windows.Forms.MenuItem();
+            this.mi_File_Exit = new System.Windows.Forms.MenuItem();
+            this.mi_Export = new System.Windows.Forms.MenuItem();
+            this.mi_Export_snapshotGraphs = new System.Windows.Forms.MenuItem();
+            this.mi_Tools = new System.Windows.Forms.MenuItem();
+            this.mi_Tools_Options = new System.Windows.Forms.MenuItem();
+            this.mi_Tools_deleteHost = new System.Windows.Forms.MenuItem();
+            this.comboPingsPerSecond = new System.Windows.Forms.ComboBox();
             this.txtHost = new System.Windows.Forms.TextBox();
             this.groupBoxPingOpts = new System.Windows.Forms.GroupBox();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
@@ -73,6 +69,11 @@
             this.nudWorseThreshold = new System.Windows.Forms.NumericUpDown();
             this.label8 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
+            this.statusStrip1 = new System.Windows.Forms.StatusStrip();
+            this.toolStripSuccessLabel = new System.Windows.Forms.ToolStripStatusLabel();
+            this.toolStripSuccessValue = new System.Windows.Forms.ToolStripStatusLabel();
+            this.toolStripFailLabel = new System.Windows.Forms.ToolStripStatusLabel();
+            this.toolStripFailValue = new System.Windows.Forms.ToolStripStatusLabel();
             ((System.ComponentModel.ISupportInitialize)(this.nudPingsPerSecond)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
@@ -84,6 +85,7 @@
             this.groupBoxGraphOpts.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudBadThreshold)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudWorseThreshold)).BeginInit();
+            this.statusStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // txtOut
@@ -95,7 +97,7 @@
             this.txtOut.Name = "txtOut";
             this.txtOut.ReadOnly = true;
             this.txtOut.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.txtOut.Size = new System.Drawing.Size(627, 46);
+            this.txtOut.Size = new System.Drawing.Size(940, 30);
             this.txtOut.TabIndex = 15;
             // 
             // lblHost
@@ -154,45 +156,25 @@
             this.btnStart.UseVisualStyleBackColor = false;
             this.btnStart.Click += new System.EventHandler(this.btnStart_Click);
             // 
-            // label4
+            // lblReplSuccessful
             // 
-            this.label4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(12, 472);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(62, 13);
-            this.label4.TabIndex = 8;
-            this.label4.Text = "Successful:";
+            this.lblReplSuccessful.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.lblReplSuccessful.AutoSize = true;
+            this.lblReplSuccessful.Location = new System.Drawing.Point(80, 367);
+            this.lblReplSuccessful.Name = "lblReplSuccessful";
+            this.lblReplSuccessful.Size = new System.Drawing.Size(13, 13);
+            this.lblReplSuccessful.TabIndex = 9;
+            this.lblReplSuccessful.Text = "0";
             // 
-            // lblSuccessful
+            // lblReplFailed
             // 
-            this.lblSuccessful.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.lblSuccessful.AutoSize = true;
-            this.lblSuccessful.Location = new System.Drawing.Point(80, 472);
-            this.lblSuccessful.Name = "lblSuccessful";
-            this.lblSuccessful.Size = new System.Drawing.Size(13, 13);
-            this.lblSuccessful.TabIndex = 9;
-            this.lblSuccessful.Text = "0";
-            // 
-            // lblFailed
-            // 
-            this.lblFailed.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.lblFailed.AutoSize = true;
-            this.lblFailed.Location = new System.Drawing.Point(206, 472);
-            this.lblFailed.Name = "lblFailed";
-            this.lblFailed.Size = new System.Drawing.Size(13, 13);
-            this.lblFailed.TabIndex = 11;
-            this.lblFailed.Text = "0";
-            // 
-            // label7
-            // 
-            this.label7.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(162, 472);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(38, 13);
-            this.label7.TabIndex = 10;
-            this.label7.Text = "Failed:";
+            this.lblReplFailed.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.lblReplFailed.AutoSize = true;
+            this.lblReplFailed.Location = new System.Drawing.Point(206, 367);
+            this.lblReplFailed.Name = "lblReplFailed";
+            this.lblReplFailed.Size = new System.Drawing.Size(13, 13);
+            this.lblReplFailed.TabIndex = 11;
+            this.lblReplFailed.Text = "0";
             // 
             // splitContainer1
             // 
@@ -208,46 +190,37 @@
             // splitContainer1.Panel2
             // 
             this.splitContainer1.Panel2.Controls.Add(this.panel_Graphs);
-            this.splitContainer1.Size = new System.Drawing.Size(627, 311);
-            this.splitContainer1.SplitterDistance = 46;
+            this.splitContainer1.Size = new System.Drawing.Size(940, 206);
+            this.splitContainer1.SplitterDistance = 30;
             this.splitContainer1.TabIndex = 12;
             // 
             // panel_Graphs
             // 
             this.panel_Graphs.BackColor = System.Drawing.SystemColors.Window;
-            this.panel_Graphs.Controls.Add(this.label5);
+            this.panel_Graphs.Controls.Add(this.statusStrip1);
+            this.panel_Graphs.Controls.Add(this.labelGraphIntro);
             this.panel_Graphs.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel_Graphs.Location = new System.Drawing.Point(0, 0);
             this.panel_Graphs.Name = "panel_Graphs";
-            this.panel_Graphs.Size = new System.Drawing.Size(627, 261);
+            this.panel_Graphs.Size = new System.Drawing.Size(940, 172);
             this.panel_Graphs.TabIndex = 16;
             this.panel_Graphs.Click += new System.EventHandler(this.panel_Graphs_Click);
             this.panel_Graphs.Resize += new System.EventHandler(this.panel_Graphs_Resize);
             // 
-            // label5
+            // labelGraphIntro
             // 
-            this.label5.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.labelGraphIntro.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.label5.BackColor = System.Drawing.SystemColors.Window;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
-            this.label5.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.label5.Location = new System.Drawing.Point(2, 12);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(622, 91);
-            this.label5.TabIndex = 0;
-            this.label5.Text = "Ping response graphs will appear here. \r\n\r\nTry clicking the graph(s) after you ac" +
+            this.labelGraphIntro.BackColor = System.Drawing.SystemColors.Window;
+            this.labelGraphIntro.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
+            this.labelGraphIntro.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.labelGraphIntro.Location = new System.Drawing.Point(2, 12);
+            this.labelGraphIntro.Name = "labelGraphIntro";
+            this.labelGraphIntro.Size = new System.Drawing.Size(935, 91);
+            this.labelGraphIntro.TabIndex = 0;
+            this.labelGraphIntro.Text = "Ping response graphs will appear here. \r\n\r\nTry clicking the graph(s) after you ac" +
     "tivate ping tracing.";
-            this.label5.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            // 
-            // lblHoveredPingStatus
-            // 
-            this.lblHoveredPingStatus.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.lblHoveredPingStatus.AutoSize = true;
-            this.lblHoveredPingStatus.Location = new System.Drawing.Point(276, 472);
-            this.lblHoveredPingStatus.Name = "lblHoveredPingStatus";
-            this.lblHoveredPingStatus.Size = new System.Drawing.Size(19, 13);
-            this.lblHoveredPingStatus.TabIndex = 13;
-            this.lblHoveredPingStatus.Text = "    ";
+            this.labelGraphIntro.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // cbTraceroute
             // 
@@ -263,14 +236,6 @@
         "may be monitored.");
             this.cbTraceroute.UseVisualStyleBackColor = true;
             this.cbTraceroute.CheckedChanged += new System.EventHandler(this.cbTraceroute_CheckedChanged);
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(609, 0);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(0, 13);
-            this.label6.TabIndex = 16;
             // 
             // contextMenuStripHostHistory
             // 
@@ -324,68 +289,68 @@
             // menuMain
             // 
             this.menuMain.MenuItems.AddRange(new System.Windows.Forms.MenuItem[] {
-            this.menuItemFile,
-            this.menuItemExport,
-            this.menuItemTools});
+            this.mi_File,
+            this.mi_Export,
+            this.mi_Tools});
             // 
-            // menuItemFile
+            // mi_File
             // 
-            this.menuItemFile.Index = 0;
-            this.menuItemFile.MenuItems.AddRange(new System.Windows.Forms.MenuItem[] {
-            this.mi_Exit});
-            this.menuItemFile.Text = "&File";
+            this.mi_File.Index = 0;
+            this.mi_File.MenuItems.AddRange(new System.Windows.Forms.MenuItem[] {
+            this.mi_File_Exit});
+            this.mi_File.Text = "&File";
             // 
-            // mi_Exit
+            // mi_File_Exit
             // 
-            this.mi_Exit.Index = 0;
-            this.mi_Exit.Text = "E&xit";
-            this.mi_Exit.Click += new System.EventHandler(this.mi_Exit_Click);
+            this.mi_File_Exit.Index = 0;
+            this.mi_File_Exit.Text = "E&xit";
+            this.mi_File_Exit.Click += new System.EventHandler(this.mi_Exit_Click);
             // 
-            // menuItemExport
+            // mi_Export
             // 
-            this.menuItemExport.Index = 1;
-            this.menuItemExport.MenuItems.AddRange(new System.Windows.Forms.MenuItem[] {
-            this.mi_snapshotGraphs});
-            this.menuItemExport.Text = "E&xport";
+            this.mi_Export.Index = 1;
+            this.mi_Export.MenuItems.AddRange(new System.Windows.Forms.MenuItem[] {
+            this.mi_Export_snapshotGraphs});
+            this.mi_Export.Text = "E&xport";
             // 
-            // mi_snapshotGraphs
+            // mi_Export_snapshotGraphs
             // 
-            this.mi_snapshotGraphs.Index = 0;
-            this.mi_snapshotGraphs.Text = "&Snapshot of graphs";
-            this.mi_snapshotGraphs.Click += new System.EventHandler(this.mi_snapshotGraphs_Click);
+            this.mi_Export_snapshotGraphs.Index = 0;
+            this.mi_Export_snapshotGraphs.Text = "&Snapshot of graphs";
+            this.mi_Export_snapshotGraphs.Click += new System.EventHandler(this.mi_snapshotGraphs_Click);
             // 
-            // menuItemTools
+            // mi_Tools
             // 
-            this.menuItemTools.Index = 2;
-            this.menuItemTools.MenuItems.AddRange(new System.Windows.Forms.MenuItem[] {
-            this.mi_Options,
-            this.mi_deleteHost});
-            this.menuItemTools.Text = "&Tools";
+            this.mi_Tools.Index = 2;
+            this.mi_Tools.MenuItems.AddRange(new System.Windows.Forms.MenuItem[] {
+            this.mi_Tools_Options,
+            this.mi_Tools_deleteHost});
+            this.mi_Tools.Text = "&Tools";
             // 
-            // mi_Options
+            // mi_Tools_Options
             // 
-            this.mi_Options.Index = 0;
-            this.mi_Options.Text = "&Options";
-            this.mi_Options.Click += new System.EventHandler(this.mi_Options_Click);
+            this.mi_Tools_Options.Index = 0;
+            this.mi_Tools_Options.Text = "&Options";
+            this.mi_Tools_Options.Click += new System.EventHandler(this.mi_Options_Click);
             // 
-            // mi_deleteHost
+            // mi_Tools_deleteHost
             // 
-            this.mi_deleteHost.Index = 1;
-            this.mi_deleteHost.Text = "Delete Current Host";
-            this.mi_deleteHost.Click += new System.EventHandler(this.mi_deleteHost_Click);
+            this.mi_Tools_deleteHost.Index = 1;
+            this.mi_Tools_deleteHost.Text = "Delete Current Host";
+            this.mi_Tools_deleteHost.Click += new System.EventHandler(this.mi_deleteHost_Click);
             // 
-            // selectPingsPerSecond
+            // comboPingsPerSecond
             // 
-            this.selectPingsPerSecond.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.selectPingsPerSecond.FormattingEnabled = true;
-            this.selectPingsPerSecond.Items.AddRange(new object[] {
+            this.comboPingsPerSecond.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboPingsPerSecond.FormattingEnabled = true;
+            this.comboPingsPerSecond.Items.AddRange(new object[] {
             "pings per second",
             "seconds per ping"});
-            this.selectPingsPerSecond.Location = new System.Drawing.Point(95, 46);
-            this.selectPingsPerSecond.Name = "selectPingsPerSecond";
-            this.selectPingsPerSecond.Size = new System.Drawing.Size(132, 21);
-            this.selectPingsPerSecond.TabIndex = 5;
-            this.selectPingsPerSecond.SelectedIndexChanged += new System.EventHandler(this.selectPingsPerSecond_SelectedIndexChanged);
+            this.comboPingsPerSecond.Location = new System.Drawing.Point(95, 46);
+            this.comboPingsPerSecond.Name = "comboPingsPerSecond";
+            this.comboPingsPerSecond.Size = new System.Drawing.Size(132, 21);
+            this.comboPingsPerSecond.TabIndex = 5;
+            this.comboPingsPerSecond.SelectedIndexChanged += new System.EventHandler(this.selectPingsPerSecond_SelectedIndexChanged);
             // 
             // txtHost
             // 
@@ -400,7 +365,7 @@
             // groupBoxPingOpts
             // 
             this.groupBoxPingOpts.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.groupBoxPingOpts.Controls.Add(this.selectPingsPerSecond);
+            this.groupBoxPingOpts.Controls.Add(this.comboPingsPerSecond);
             this.groupBoxPingOpts.Controls.Add(this.txtHost);
             this.groupBoxPingOpts.Controls.Add(this.lblHost);
             this.groupBoxPingOpts.Controls.Add(this.cbReverseDNS);
@@ -422,12 +387,11 @@
             this.flowLayoutPanel1.AutoSize = true;
             this.flowLayoutPanel1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.flowLayoutPanel1.Controls.Add(this.groupBoxPingOpts);
-            this.flowLayoutPanel1.Controls.Add(this.label6);
             this.flowLayoutPanel1.Controls.Add(this.groupBoxGraphOpts);
             this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(627, 181);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(940, 181);
             this.flowLayoutPanel1.TabIndex = 24;
             // 
             // groupBoxGraphOpts
@@ -585,17 +549,51 @@
             this.toolTip1.SetToolTip(this.label9, "Pings exceeding this threshold are drawn in bright yellow color, \r\nand the backgr" +
         "ound of the ping graph will be red tinted \r\nabove this point.");
             // 
+            // statusStrip1
+            // 
+            this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripSuccessLabel,
+            this.toolStripSuccessValue,
+            this.toolStripFailLabel,
+            this.toolStripFailValue});
+            this.statusStrip1.Location = new System.Drawing.Point(0, 150);
+            this.statusStrip1.Name = "statusStrip1";
+            this.statusStrip1.Size = new System.Drawing.Size(940, 22);
+            this.statusStrip1.TabIndex = 1;
+            this.statusStrip1.Text = "statusStrip1";
+            // 
+            // toolStripSuccessLabel
+            // 
+            this.toolStripSuccessLabel.Name = "toolStripSuccessLabel";
+            this.toolStripSuccessLabel.Size = new System.Drawing.Size(51, 17);
+            this.toolStripSuccessLabel.Text = "Success:";
+            // 
+            // toolStripSuccessValue
+            // 
+            this.toolStripSuccessValue.Name = "toolStripSuccessValue";
+            this.toolStripSuccessValue.Size = new System.Drawing.Size(13, 17);
+            this.toolStripSuccessValue.Text = "0";
+            // 
+            // toolStripFailLabel
+            // 
+            this.toolStripFailLabel.Name = "toolStripFailLabel";
+            this.toolStripFailLabel.Size = new System.Drawing.Size(28, 17);
+            this.toolStripFailLabel.Text = "Fail:";
+            // 
+            // toolStripFailValue
+            // 
+            this.toolStripFailValue.Name = "toolStripFailValue";
+            this.toolStripFailValue.Size = new System.Drawing.Size(13, 17);
+            this.toolStripFailValue.Text = "0";
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(627, 492);
-            this.Controls.Add(this.lblHoveredPingStatus);
+            this.ClientSize = new System.Drawing.Size(940, 387);
             this.Controls.Add(this.splitContainer1);
-            this.Controls.Add(this.lblFailed);
-            this.Controls.Add(this.label7);
-            this.Controls.Add(this.lblSuccessful);
-            this.Controls.Add(this.label4);
+            this.Controls.Add(this.lblReplFailed);
+            this.Controls.Add(this.lblReplSuccessful);
             this.Controls.Add(this.flowLayoutPanel1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Menu = this.menuMain;
@@ -611,14 +609,16 @@
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
             this.splitContainer1.ResumeLayout(false);
             this.panel_Graphs.ResumeLayout(false);
+            this.panel_Graphs.PerformLayout();
             this.groupBoxPingOpts.ResumeLayout(false);
             this.groupBoxPingOpts.PerformLayout();
             this.flowLayoutPanel1.ResumeLayout(false);
-            this.flowLayoutPanel1.PerformLayout();
             this.groupBoxGraphOpts.ResumeLayout(false);
             this.groupBoxGraphOpts.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudBadThreshold)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudWorseThreshold)).EndInit();
+            this.statusStrip1.ResumeLayout(false);
+            this.statusStrip1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -632,30 +632,26 @@
 		private System.Windows.Forms.Label label2;
 		private System.Windows.Forms.NumericUpDown nudPingsPerSecond;
 		private System.Windows.Forms.Button btnStart;
-		private System.Windows.Forms.Label label4;
-		private System.Windows.Forms.Label lblSuccessful;
-		private System.Windows.Forms.Label lblFailed;
-		private System.Windows.Forms.Label label7;
+		private System.Windows.Forms.Label lblReplSuccessful;
+		private System.Windows.Forms.Label lblReplFailed;
 		private System.Windows.Forms.SplitContainer splitContainer1;
-		private System.Windows.Forms.Label lblHoveredPingStatus;
 		private System.Windows.Forms.CheckBox cbTraceroute;
 		private System.Windows.Forms.Panel panel_Graphs;
-		private System.Windows.Forms.Label label5;
-		private System.Windows.Forms.Label label6;
+		private System.Windows.Forms.Label labelGraphIntro;
 		private System.Windows.Forms.ContextMenuStrip contextMenuStripHostHistory;
 		private System.Windows.Forms.Label label1;
 		private System.Windows.Forms.ToolTip toolTip1;
 		private System.Windows.Forms.TextBox txtDisplayName;
 		private System.Windows.Forms.MainMenu menuMain;
-		private System.Windows.Forms.MenuItem menuItemExport;
-		private System.Windows.Forms.MenuItem mi_snapshotGraphs;
-		private System.Windows.Forms.MenuItem menuItemTools;
-		private System.Windows.Forms.MenuItem mi_Options;
-		private System.Windows.Forms.MenuItem menuItemFile;
-		private System.Windows.Forms.MenuItem mi_Exit;
+		private System.Windows.Forms.MenuItem mi_Export;
+		private System.Windows.Forms.MenuItem mi_Export_snapshotGraphs;
+		private System.Windows.Forms.MenuItem mi_Tools;
+		private System.Windows.Forms.MenuItem mi_Tools_Options;
+		private System.Windows.Forms.MenuItem mi_File;
+		private System.Windows.Forms.MenuItem mi_File_Exit;
 		private System.Windows.Forms.CheckBox cbReverseDNS;
-		private System.Windows.Forms.ComboBox selectPingsPerSecond;
-		private System.Windows.Forms.MenuItem mi_deleteHost;
+		private System.Windows.Forms.ComboBox comboPingsPerSecond;
+		private System.Windows.Forms.MenuItem mi_Tools_deleteHost;
         private System.Windows.Forms.GroupBox groupBoxPingOpts;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
         private System.Windows.Forms.GroupBox groupBoxGraphOpts;
@@ -669,6 +665,11 @@
         private System.Windows.Forms.NumericUpDown nudWorseThreshold;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.StatusStrip statusStrip1;
+        private System.Windows.Forms.ToolStripStatusLabel toolStripSuccessLabel;
+        private System.Windows.Forms.ToolStripStatusLabel toolStripSuccessValue;
+        private System.Windows.Forms.ToolStripStatusLabel toolStripFailLabel;
+        private System.Windows.Forms.ToolStripStatusLabel toolStripFailValue;
     }
 }
 
