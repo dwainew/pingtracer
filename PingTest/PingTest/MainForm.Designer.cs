@@ -95,7 +95,7 @@
             this.txtOut.Name = "txtOut";
             this.txtOut.ReadOnly = true;
             this.txtOut.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.txtOut.Size = new System.Drawing.Size(875, 67);
+            this.txtOut.Size = new System.Drawing.Size(627, 46);
             this.txtOut.TabIndex = 15;
             // 
             // lblHost
@@ -143,9 +143,8 @@
             // 
             // btnStart
             // 
-            this.btnStart.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnStart.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            this.btnStart.Location = new System.Drawing.Point(795, 21);
+            this.btnStart.Location = new System.Drawing.Point(523, 21);
             this.btnStart.Name = "btnStart";
             this.btnStart.Size = new System.Drawing.Size(66, 46);
             this.btnStart.TabIndex = 8;
@@ -159,7 +158,7 @@
             // 
             this.label4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(12, 627);
+            this.label4.Location = new System.Drawing.Point(12, 472);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(62, 13);
             this.label4.TabIndex = 8;
@@ -169,7 +168,7 @@
             // 
             this.lblSuccessful.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.lblSuccessful.AutoSize = true;
-            this.lblSuccessful.Location = new System.Drawing.Point(80, 627);
+            this.lblSuccessful.Location = new System.Drawing.Point(80, 472);
             this.lblSuccessful.Name = "lblSuccessful";
             this.lblSuccessful.Size = new System.Drawing.Size(13, 13);
             this.lblSuccessful.TabIndex = 9;
@@ -179,7 +178,7 @@
             // 
             this.lblFailed.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.lblFailed.AutoSize = true;
-            this.lblFailed.Location = new System.Drawing.Point(206, 627);
+            this.lblFailed.Location = new System.Drawing.Point(206, 472);
             this.lblFailed.Name = "lblFailed";
             this.lblFailed.Size = new System.Drawing.Size(13, 13);
             this.lblFailed.TabIndex = 11;
@@ -189,7 +188,7 @@
             // 
             this.label7.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(162, 627);
+            this.label7.Location = new System.Drawing.Point(162, 472);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(38, 13);
             this.label7.TabIndex = 10;
@@ -197,8 +196,8 @@
             // 
             // splitContainer1
             // 
-            this.splitContainer1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.splitContainer1.Location = new System.Drawing.Point(0, 192);
+            this.splitContainer1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.splitContainer1.Location = new System.Drawing.Point(0, 181);
             this.splitContainer1.Name = "splitContainer1";
             this.splitContainer1.Orientation = System.Windows.Forms.Orientation.Horizontal;
             // 
@@ -209,8 +208,8 @@
             // splitContainer1.Panel2
             // 
             this.splitContainer1.Panel2.Controls.Add(this.panel_Graphs);
-            this.splitContainer1.Size = new System.Drawing.Size(875, 455);
-            this.splitContainer1.SplitterDistance = 67;
+            this.splitContainer1.Size = new System.Drawing.Size(627, 311);
+            this.splitContainer1.SplitterDistance = 46;
             this.splitContainer1.TabIndex = 12;
             // 
             // panel_Graphs
@@ -220,7 +219,7 @@
             this.panel_Graphs.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel_Graphs.Location = new System.Drawing.Point(0, 0);
             this.panel_Graphs.Name = "panel_Graphs";
-            this.panel_Graphs.Size = new System.Drawing.Size(875, 384);
+            this.panel_Graphs.Size = new System.Drawing.Size(627, 261);
             this.panel_Graphs.TabIndex = 16;
             this.panel_Graphs.Click += new System.EventHandler(this.panel_Graphs_Click);
             this.panel_Graphs.Resize += new System.EventHandler(this.panel_Graphs_Resize);
@@ -234,7 +233,7 @@
             this.label5.ForeColor = System.Drawing.SystemColors.ControlText;
             this.label5.Location = new System.Drawing.Point(2, 12);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(870, 91);
+            this.label5.Size = new System.Drawing.Size(622, 91);
             this.label5.TabIndex = 0;
             this.label5.Text = "Ping response graphs will appear here. \r\n\r\nTry clicking the graph(s) after you ac" +
     "tivate ping tracing.";
@@ -244,7 +243,7 @@
             // 
             this.lblHoveredPingStatus.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.lblHoveredPingStatus.AutoSize = true;
-            this.lblHoveredPingStatus.Location = new System.Drawing.Point(276, 627);
+            this.lblHoveredPingStatus.Location = new System.Drawing.Point(276, 472);
             this.lblHoveredPingStatus.Name = "lblHoveredPingStatus";
             this.lblHoveredPingStatus.Size = new System.Drawing.Size(19, 13);
             this.lblHoveredPingStatus.TabIndex = 13;
@@ -268,7 +267,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(3, 92);
+            this.label6.Location = new System.Drawing.Point(609, 0);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(0, 13);
             this.label6.TabIndex = 16;
@@ -299,11 +298,9 @@
             // 
             // txtDisplayName
             // 
-            this.txtDisplayName.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.txtDisplayName.Location = new System.Drawing.Point(314, 21);
             this.txtDisplayName.Name = "txtDisplayName";
-            this.txtDisplayName.Size = new System.Drawing.Size(473, 20);
+            this.txtDisplayName.Size = new System.Drawing.Size(195, 20);
             this.txtDisplayName.TabIndex = 2;
             this.toolTip1.SetToolTip(this.txtDisplayName, "(Optional) \r\nA memorable name to show in the history \r\nwhen you click on the blue" +
         " Host label.");
@@ -402,9 +399,6 @@
             // 
             // groupBoxPingOpts
             // 
-            this.groupBoxPingOpts.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.groupBoxPingOpts.AutoSize = true;
             this.groupBoxPingOpts.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.groupBoxPingOpts.Controls.Add(this.selectPingsPerSecond);
             this.groupBoxPingOpts.Controls.Add(this.txtHost);
@@ -418,26 +412,26 @@
             this.groupBoxPingOpts.Controls.Add(this.cbTraceroute);
             this.groupBoxPingOpts.Location = new System.Drawing.Point(3, 3);
             this.groupBoxPingOpts.Name = "groupBoxPingOpts";
-            this.groupBoxPingOpts.Size = new System.Drawing.Size(869, 86);
+            this.groupBoxPingOpts.Size = new System.Drawing.Size(600, 95);
             this.groupBoxPingOpts.TabIndex = 23;
             this.groupBoxPingOpts.TabStop = false;
             this.groupBoxPingOpts.Text = "Ping Options:";
             // 
             // flowLayoutPanel1
             // 
+            this.flowLayoutPanel1.AutoSize = true;
             this.flowLayoutPanel1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.flowLayoutPanel1.Controls.Add(this.groupBoxPingOpts);
             this.flowLayoutPanel1.Controls.Add(this.label6);
             this.flowLayoutPanel1.Controls.Add(this.groupBoxGraphOpts);
+            this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(875, 178);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(627, 181);
             this.flowLayoutPanel1.TabIndex = 24;
             // 
             // groupBoxGraphOpts
             // 
-            this.groupBoxGraphOpts.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBoxGraphOpts.Controls.Add(this.cbLastPing);
             this.groupBoxGraphOpts.Controls.Add(this.cbJitter);
             this.groupBoxGraphOpts.Controls.Add(this.cbAverage);
@@ -448,9 +442,9 @@
             this.groupBoxGraphOpts.Controls.Add(this.nudWorseThreshold);
             this.groupBoxGraphOpts.Controls.Add(this.label8);
             this.groupBoxGraphOpts.Controls.Add(this.label9);
-            this.groupBoxGraphOpts.Location = new System.Drawing.Point(3, 108);
+            this.groupBoxGraphOpts.Location = new System.Drawing.Point(3, 104);
             this.groupBoxGraphOpts.Name = "groupBoxGraphOpts";
-            this.groupBoxGraphOpts.Size = new System.Drawing.Size(869, 74);
+            this.groupBoxGraphOpts.Size = new System.Drawing.Size(479, 74);
             this.groupBoxGraphOpts.TabIndex = 24;
             this.groupBoxGraphOpts.TabStop = false;
             this.groupBoxGraphOpts.Text = "Graph Options:";
@@ -530,7 +524,7 @@
             // nudBadThreshold
             // 
             this.nudBadThreshold.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.nudBadThreshold.Location = new System.Drawing.Point(807, 18);
+            this.nudBadThreshold.Location = new System.Drawing.Point(417, 18);
             this.nudBadThreshold.Maximum = new decimal(new int[] {
             9999,
             0,
@@ -550,7 +544,7 @@
             // nudWorseThreshold
             // 
             this.nudWorseThreshold.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.nudWorseThreshold.Location = new System.Drawing.Point(807, 44);
+            this.nudWorseThreshold.Location = new System.Drawing.Point(417, 44);
             this.nudWorseThreshold.Maximum = new decimal(new int[] {
             9999,
             0,
@@ -571,7 +565,7 @@
             // 
             this.label8.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(726, 21);
+            this.label8.Location = new System.Drawing.Point(336, 21);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(75, 13);
             this.label8.TabIndex = 17;
@@ -583,7 +577,7 @@
             // 
             this.label9.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(714, 46);
+            this.label9.Location = new System.Drawing.Point(324, 46);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(87, 13);
             this.label9.TabIndex = 18;
@@ -595,7 +589,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(875, 647);
+            this.ClientSize = new System.Drawing.Size(627, 492);
             this.Controls.Add(this.lblHoveredPingStatus);
             this.Controls.Add(this.splitContainer1);
             this.Controls.Add(this.lblFailed);
