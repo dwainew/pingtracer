@@ -1,7 +1,11 @@
 ﻿<?xml version='1.0' encoding='utf-8'?>
-<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)">
-  <Profiles>
-    <Profile Name="(Default)" />
-  </Profiles>
-  <Settings />
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="PingTracer.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="HostBoxToolTip" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">Enter a comma delimited IP address and/or host name list of destination(s) you wish to monitor.
+
+ You may click the blue Host label to choose a previously entered set name.</Value>
+    </Setting>
+  </Settings>
 </SettingsFile>

@@ -31,7 +31,6 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.txtOut = new System.Windows.Forms.TextBox();
-            this.txtHost = new System.Windows.Forms.TextBox();
             this.lblHost = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.nudPingsPerSecond = new System.Windows.Forms.NumericUpDown();
@@ -71,6 +70,7 @@
             this.mi_Options = new System.Windows.Forms.MenuItem();
             this.mi_deleteHost = new System.Windows.Forms.MenuItem();
             this.selectPingsPerSecond = new System.Windows.Forms.ComboBox();
+            this.txtHost = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.nudPingsPerSecond)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
@@ -91,15 +91,8 @@
             this.txtOut.Name = "txtOut";
             this.txtOut.ReadOnly = true;
             this.txtOut.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.txtOut.Size = new System.Drawing.Size(608, 69);
+            this.txtOut.Size = new System.Drawing.Size(608, 65);
             this.txtOut.TabIndex = 15;
-            // 
-            // txtHost
-            // 
-            this.txtHost.Location = new System.Drawing.Point(50, 6);
-            this.txtHost.Name = "txtHost";
-            this.txtHost.Size = new System.Drawing.Size(184, 20);
-            this.txtHost.TabIndex = 1;
             // 
             // lblHost
             // 
@@ -110,6 +103,9 @@
             this.lblHost.Size = new System.Drawing.Size(32, 13);
             this.lblHost.TabIndex = 2;
             this.lblHost.Text = "Host:";
+            this.toolTip1.SetToolTip(this.lblHost, "Enter a comma delimited IP address and/or host name list of destination(s) you wi" +
+        "sh to monitor.\r\n\r\n You may click the blue Host label to choose a previously ente" +
+        "red set name.");
             this.lblHost.Click += new System.EventHandler(this.lblHost_Click);
             // 
             // label2
@@ -159,7 +155,7 @@
             // 
             this.label4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(12, 541);
+            this.label4.Location = new System.Drawing.Point(12, 520);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(62, 13);
             this.label4.TabIndex = 8;
@@ -169,7 +165,7 @@
             // 
             this.lblSuccessful.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.lblSuccessful.AutoSize = true;
-            this.lblSuccessful.Location = new System.Drawing.Point(80, 541);
+            this.lblSuccessful.Location = new System.Drawing.Point(80, 520);
             this.lblSuccessful.Name = "lblSuccessful";
             this.lblSuccessful.Size = new System.Drawing.Size(13, 13);
             this.lblSuccessful.TabIndex = 9;
@@ -179,7 +175,7 @@
             // 
             this.lblFailed.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.lblFailed.AutoSize = true;
-            this.lblFailed.Location = new System.Drawing.Point(206, 541);
+            this.lblFailed.Location = new System.Drawing.Point(206, 520);
             this.lblFailed.Name = "lblFailed";
             this.lblFailed.Size = new System.Drawing.Size(13, 13);
             this.lblFailed.TabIndex = 11;
@@ -189,7 +185,7 @@
             // 
             this.label7.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(162, 541);
+            this.label7.Location = new System.Drawing.Point(162, 520);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(38, 13);
             this.label7.TabIndex = 10;
@@ -211,8 +207,8 @@
             // splitContainer1.Panel2
             // 
             this.splitContainer1.Panel2.Controls.Add(this.panel_Graphs);
-            this.splitContainer1.Size = new System.Drawing.Size(608, 403);
-            this.splitContainer1.SplitterDistance = 69;
+            this.splitContainer1.Size = new System.Drawing.Size(608, 382);
+            this.splitContainer1.SplitterDistance = 65;
             this.splitContainer1.TabIndex = 12;
             // 
             // panel_Graphs
@@ -224,7 +220,7 @@
             this.panel_Graphs.Controls.Add(this.label5);
             this.panel_Graphs.Location = new System.Drawing.Point(0, 0);
             this.panel_Graphs.Name = "panel_Graphs";
-            this.panel_Graphs.Size = new System.Drawing.Size(608, 329);
+            this.panel_Graphs.Size = new System.Drawing.Size(608, 312);
             this.panel_Graphs.TabIndex = 16;
             this.panel_Graphs.Click += new System.EventHandler(this.panel_Graphs_Click);
             this.panel_Graphs.Resize += new System.EventHandler(this.panel_Graphs_Resize);
@@ -248,7 +244,7 @@
             // 
             this.lblHoveredPingStatus.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.lblHoveredPingStatus.AutoSize = true;
-            this.lblHoveredPingStatus.Location = new System.Drawing.Point(276, 541);
+            this.lblHoveredPingStatus.Location = new System.Drawing.Point(276, 520);
             this.lblHoveredPingStatus.Name = "lblHoveredPingStatus";
             this.lblHoveredPingStatus.Size = new System.Drawing.Size(19, 13);
             this.lblHoveredPingStatus.TabIndex = 13;
@@ -557,11 +553,21 @@
             this.selectPingsPerSecond.TabIndex = 5;
             this.selectPingsPerSecond.SelectedIndexChanged += new System.EventHandler(this.selectPingsPerSecond_SelectedIndexChanged);
             // 
+            // txtHost
+            // 
+            this.txtHost.Location = new System.Drawing.Point(50, 6);
+            this.txtHost.Name = "txtHost";
+            this.txtHost.Size = new System.Drawing.Size(184, 20);
+            this.txtHost.TabIndex = 1;
+            this.toolTip1.SetToolTip(this.txtHost, "Enter a comma delimited IP address and/or host name list of destination(s) you wi" +
+        "sh to monitor.\r\n\r\n You may click the blue Host label to choose a previously ente" +
+        "red set name.");
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(608, 561);
+            this.ClientSize = new System.Drawing.Size(608, 540);
             this.Controls.Add(this.selectPingsPerSecond);
             this.Controls.Add(this.cbReverseDNS);
             this.Controls.Add(this.groupBox1);

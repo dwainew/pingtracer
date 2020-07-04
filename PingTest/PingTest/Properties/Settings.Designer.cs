@@ -22,5 +22,16 @@ namespace PingTracer.Properties {
                 return defaultInstance;
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("Enter a comma delimited IP address and/or host name list of destination(s) you wi" +
+            "sh to monitor.\r\n\r\n You may click the blue Host label to choose a previously ente" +
+            "red set name.")]
+        public string HostBoxToolTip {
+            get {
+                return ((string)(this["HostBoxToolTip"]));
+            }
+        }
     }
 }
