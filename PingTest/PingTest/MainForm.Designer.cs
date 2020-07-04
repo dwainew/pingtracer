@@ -91,7 +91,7 @@
             this.txtOut.Name = "txtOut";
             this.txtOut.ReadOnly = true;
             this.txtOut.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.txtOut.Size = new System.Drawing.Size(608, 65);
+            this.txtOut.Size = new System.Drawing.Size(608, 100);
             this.txtOut.TabIndex = 15;
             // 
             // lblHost
@@ -193,10 +193,7 @@
             // 
             // splitContainer1
             // 
-            this.splitContainer1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.splitContainer1.Location = new System.Drawing.Point(0, 135);
+            this.splitContainer1.Location = new System.Drawing.Point(0, 165);
             this.splitContainer1.Name = "splitContainer1";
             this.splitContainer1.Orientation = System.Windows.Forms.Orientation.Horizontal;
             // 
@@ -207,20 +204,18 @@
             // splitContainer1.Panel2
             // 
             this.splitContainer1.Panel2.Controls.Add(this.panel_Graphs);
-            this.splitContainer1.Size = new System.Drawing.Size(608, 382);
-            this.splitContainer1.SplitterDistance = 65;
+            this.splitContainer1.Size = new System.Drawing.Size(608, 333);
+            this.splitContainer1.SplitterDistance = 100;
             this.splitContainer1.TabIndex = 12;
             // 
             // panel_Graphs
             // 
-            this.panel_Graphs.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.panel_Graphs.BackColor = System.Drawing.SystemColors.Window;
             this.panel_Graphs.Controls.Add(this.label5);
-            this.panel_Graphs.Location = new System.Drawing.Point(0, 50);
+            this.panel_Graphs.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel_Graphs.Location = new System.Drawing.Point(0, 0);
             this.panel_Graphs.Name = "panel_Graphs";
-            this.panel_Graphs.Size = new System.Drawing.Size(608, 262);
+            this.panel_Graphs.Size = new System.Drawing.Size(608, 229);
             this.panel_Graphs.TabIndex = 16;
             this.panel_Graphs.Click += new System.EventHandler(this.panel_Graphs_Click);
             this.panel_Graphs.Resize += new System.EventHandler(this.panel_Graphs_Resize);
@@ -480,7 +475,7 @@
             this.groupBox1.Controls.Add(this.nudWorseThreshold);
             this.groupBox1.Controls.Add(this.label8);
             this.groupBox1.Controls.Add(this.label9);
-            this.groupBox1.Location = new System.Drawing.Point(15, 58);
+            this.groupBox1.Location = new System.Drawing.Point(15, 86);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(581, 71);
             this.groupBox1.TabIndex = 9;
