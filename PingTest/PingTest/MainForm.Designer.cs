@@ -61,12 +61,12 @@
             this.cbJitter = new System.Windows.Forms.CheckBox();
             this.cbLastPing = new System.Windows.Forms.CheckBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.mainMenu1 = new System.Windows.Forms.MainMenu(this.components);
-            this.menuItem6 = new System.Windows.Forms.MenuItem();
+            this.menuMain = new System.Windows.Forms.MainMenu(this.components);
+            this.menuItemFile = new System.Windows.Forms.MenuItem();
             this.mi_Exit = new System.Windows.Forms.MenuItem();
-            this.menuItem1 = new System.Windows.Forms.MenuItem();
+            this.menuItemExport = new System.Windows.Forms.MenuItem();
             this.mi_snapshotGraphs = new System.Windows.Forms.MenuItem();
-            this.menuItem4 = new System.Windows.Forms.MenuItem();
+            this.menuItemTools = new System.Windows.Forms.MenuItem();
             this.mi_Options = new System.Windows.Forms.MenuItem();
             this.mi_deleteHost = new System.Windows.Forms.MenuItem();
             this.selectPingsPerSecond = new System.Windows.Forms.ComboBox();
@@ -218,9 +218,9 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel_Graphs.BackColor = System.Drawing.SystemColors.Window;
             this.panel_Graphs.Controls.Add(this.label5);
-            this.panel_Graphs.Location = new System.Drawing.Point(0, 0);
+            this.panel_Graphs.Location = new System.Drawing.Point(0, 50);
             this.panel_Graphs.Name = "panel_Graphs";
-            this.panel_Graphs.Size = new System.Drawing.Size(608, 312);
+            this.panel_Graphs.Size = new System.Drawing.Size(608, 262);
             this.panel_Graphs.TabIndex = 16;
             this.panel_Graphs.Click += new System.EventHandler(this.panel_Graphs_Click);
             this.panel_Graphs.Resize += new System.EventHandler(this.panel_Graphs_Resize);
@@ -487,19 +487,19 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Graph Options:";
             // 
-            // mainMenu1
+            // menuMain
             // 
-            this.mainMenu1.MenuItems.AddRange(new System.Windows.Forms.MenuItem[] {
-            this.menuItem6,
-            this.menuItem1,
-            this.menuItem4});
+            this.menuMain.MenuItems.AddRange(new System.Windows.Forms.MenuItem[] {
+            this.menuItemFile,
+            this.menuItemExport,
+            this.menuItemTools});
             // 
-            // menuItem6
+            // menuItemFile
             // 
-            this.menuItem6.Index = 0;
-            this.menuItem6.MenuItems.AddRange(new System.Windows.Forms.MenuItem[] {
+            this.menuItemFile.Index = 0;
+            this.menuItemFile.MenuItems.AddRange(new System.Windows.Forms.MenuItem[] {
             this.mi_Exit});
-            this.menuItem6.Text = "&File";
+            this.menuItemFile.Text = "&File";
             // 
             // mi_Exit
             // 
@@ -507,12 +507,12 @@
             this.mi_Exit.Text = "E&xit";
             this.mi_Exit.Click += new System.EventHandler(this.mi_Exit_Click);
             // 
-            // menuItem1
+            // menuItemExport
             // 
-            this.menuItem1.Index = 1;
-            this.menuItem1.MenuItems.AddRange(new System.Windows.Forms.MenuItem[] {
+            this.menuItemExport.Index = 1;
+            this.menuItemExport.MenuItems.AddRange(new System.Windows.Forms.MenuItem[] {
             this.mi_snapshotGraphs});
-            this.menuItem1.Text = "E&xport";
+            this.menuItemExport.Text = "E&xport";
             // 
             // mi_snapshotGraphs
             // 
@@ -520,13 +520,13 @@
             this.mi_snapshotGraphs.Text = "&Snapshot of graphs";
             this.mi_snapshotGraphs.Click += new System.EventHandler(this.mi_snapshotGraphs_Click);
             // 
-            // menuItem4
+            // menuItemTools
             // 
-            this.menuItem4.Index = 2;
-            this.menuItem4.MenuItems.AddRange(new System.Windows.Forms.MenuItem[] {
+            this.menuItemTools.Index = 2;
+            this.menuItemTools.MenuItems.AddRange(new System.Windows.Forms.MenuItem[] {
             this.mi_Options,
             this.mi_deleteHost});
-            this.menuItem4.Text = "&Tools";
+            this.menuItemTools.Text = "&Tools";
             // 
             // mi_Options
             // 
@@ -587,7 +587,7 @@
             this.Controls.Add(this.lblHost);
             this.Controls.Add(this.txtHost);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Menu = this.mainMenu1;
+            this.Menu = this.menuMain;
             this.MinimumSize = new System.Drawing.Size(300, 200);
             this.Name = "MainForm";
             this.Text = "Ping Tracer";
@@ -639,12 +639,12 @@
 		private System.Windows.Forms.TextBox txtDisplayName;
 		private System.Windows.Forms.CheckBox cbPacketLoss;
 		private System.Windows.Forms.GroupBox groupBox1;
-		private System.Windows.Forms.MainMenu mainMenu1;
-		private System.Windows.Forms.MenuItem menuItem1;
+		private System.Windows.Forms.MainMenu menuMain;
+		private System.Windows.Forms.MenuItem menuItemExport;
 		private System.Windows.Forms.MenuItem mi_snapshotGraphs;
-		private System.Windows.Forms.MenuItem menuItem4;
+		private System.Windows.Forms.MenuItem menuItemTools;
 		private System.Windows.Forms.MenuItem mi_Options;
-		private System.Windows.Forms.MenuItem menuItem6;
+		private System.Windows.Forms.MenuItem menuItemFile;
 		private System.Windows.Forms.MenuItem mi_Exit;
 		private System.Windows.Forms.CheckBox cbReverseDNS;
 		private System.Windows.Forms.ComboBox selectPingsPerSecond;
