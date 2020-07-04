@@ -54,6 +54,10 @@ namespace PingTracer
         private readonly Color clickToStartColor = Color.FromArgb(74, 207, 74);
         private readonly Color clickToStopColor = Color.FromArgb(219, 6, 6);
 
+        private readonly string HostToolTipText =
+            "Enter a comma delimited IP address and/or host name list of destination(s) you wish to monitor.\r\n\r\n" +
+            "You may click the blue Host label to choose a previously entered value.";
+
 
         public MainForm()
         {
@@ -75,6 +79,8 @@ namespace PingTracer
             }
             selectPingsPerSecond_SelectedIndexChanged(null, null);
             btnStart.BackColor = clickToStartColor;
+            toolTip1.SetToolTip(lblHost, HostToolTipText);
+            toolTip1.SetToolTip(txtHost, HostToolTipText);
         }
 
         private IPAddress StringToIp(string address)
@@ -590,7 +596,7 @@ namespace PingTracer
             {
             }
         }
-        
+
 
         private void cbLastPing_CheckedChanged(object sender, EventArgs e)
         {

@@ -100,8 +100,6 @@
             this.txtHost.Name = "txtHost";
             this.txtHost.Size = new System.Drawing.Size(184, 20);
             this.txtHost.TabIndex = 1;
-            this.toolTip1.SetToolTip(this.txtHost, "Enter the IP address or host name of the destination you wish to monitor.\r\n\r\nYou " +
-        "may click the blue Host label to choose a previously entered value.");
             // 
             // lblHost
             // 
@@ -112,8 +110,6 @@
             this.lblHost.Size = new System.Drawing.Size(32, 13);
             this.lblHost.TabIndex = 2;
             this.lblHost.Text = "Host:";
-            this.toolTip1.SetToolTip(this.lblHost, "Enter the IP address or host name of the destination you wish to monitor.\r\n\r\nYou " +
-        "may click the blue Host label to choose a previously entered value.");
             this.lblHost.Click += new System.EventHandler(this.lblHost_Click);
             // 
             // label2
