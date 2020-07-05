@@ -437,7 +437,7 @@ namespace PingTracer
                 return;
             IList<int> keys = pingGraphs.Keys;
             int width = panel_Graphs.Width;
-            int timestampsHeight = pingGraphs[keys[0]].TimestampsHeight;
+            int timestampsHeight = pingGraphs[keys[0]].TimestampsHeight ;
             int height = panel_Graphs.Height - timestampsHeight;
             int outerHeight = height / pingGraphs.Count;
             int innerHeight = outerHeight - 1;

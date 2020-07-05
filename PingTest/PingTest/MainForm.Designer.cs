@@ -39,6 +39,11 @@
             this.lblReplFailed = new System.Windows.Forms.Label();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.panel_Graphs = new System.Windows.Forms.Panel();
+            this.statusStrip1 = new System.Windows.Forms.StatusStrip();
+            this.toolStripSuccessLabel = new System.Windows.Forms.ToolStripStatusLabel();
+            this.toolStripSuccessValue = new System.Windows.Forms.ToolStripStatusLabel();
+            this.toolStripFailLabel = new System.Windows.Forms.ToolStripStatusLabel();
+            this.toolStripFailValue = new System.Windows.Forms.ToolStripStatusLabel();
             this.labelGraphIntro = new System.Windows.Forms.Label();
             this.cbTraceroute = new System.Windows.Forms.CheckBox();
             this.contextMenuStripHostHistory = new System.Windows.Forms.ContextMenuStrip(this.components);
@@ -46,19 +51,7 @@
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.txtDisplayName = new System.Windows.Forms.TextBox();
             this.cbReverseDNS = new System.Windows.Forms.CheckBox();
-            this.menuMain = new System.Windows.Forms.MainMenu(this.components);
-            this.mi_File = new System.Windows.Forms.MenuItem();
-            this.mi_File_Exit = new System.Windows.Forms.MenuItem();
-            this.mi_Export = new System.Windows.Forms.MenuItem();
-            this.mi_Export_snapshotGraphs = new System.Windows.Forms.MenuItem();
-            this.mi_Tools = new System.Windows.Forms.MenuItem();
-            this.mi_Tools_Options = new System.Windows.Forms.MenuItem();
-            this.mi_Tools_deleteHost = new System.Windows.Forms.MenuItem();
-            this.comboPingsPerSecond = new System.Windows.Forms.ComboBox();
             this.txtHost = new System.Windows.Forms.TextBox();
-            this.groupBoxPingOpts = new System.Windows.Forms.GroupBox();
-            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
-            this.groupBoxGraphOpts = new System.Windows.Forms.GroupBox();
             this.cbLastPing = new System.Windows.Forms.CheckBox();
             this.cbJitter = new System.Windows.Forms.CheckBox();
             this.cbAverage = new System.Windows.Forms.CheckBox();
@@ -69,23 +62,30 @@
             this.nudWorseThreshold = new System.Windows.Forms.NumericUpDown();
             this.label8 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
-            this.statusStrip1 = new System.Windows.Forms.StatusStrip();
-            this.toolStripSuccessLabel = new System.Windows.Forms.ToolStripStatusLabel();
-            this.toolStripSuccessValue = new System.Windows.Forms.ToolStripStatusLabel();
-            this.toolStripFailLabel = new System.Windows.Forms.ToolStripStatusLabel();
-            this.toolStripFailValue = new System.Windows.Forms.ToolStripStatusLabel();
+            this.menuMain = new System.Windows.Forms.MainMenu(this.components);
+            this.mi_File = new System.Windows.Forms.MenuItem();
+            this.mi_File_Exit = new System.Windows.Forms.MenuItem();
+            this.mi_Export = new System.Windows.Forms.MenuItem();
+            this.mi_Export_snapshotGraphs = new System.Windows.Forms.MenuItem();
+            this.mi_Tools = new System.Windows.Forms.MenuItem();
+            this.mi_Tools_Options = new System.Windows.Forms.MenuItem();
+            this.mi_Tools_deleteHost = new System.Windows.Forms.MenuItem();
+            this.comboPingsPerSecond = new System.Windows.Forms.ComboBox();
+            this.groupBoxPingOpts = new System.Windows.Forms.GroupBox();
+            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
+            this.groupBoxGraphOpts = new System.Windows.Forms.GroupBox();
             ((System.ComponentModel.ISupportInitialize)(this.nudPingsPerSecond)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
             this.splitContainer1.SuspendLayout();
             this.panel_Graphs.SuspendLayout();
+            this.statusStrip1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nudBadThreshold)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudWorseThreshold)).BeginInit();
             this.groupBoxPingOpts.SuspendLayout();
             this.flowLayoutPanel1.SuspendLayout();
             this.groupBoxGraphOpts.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.nudBadThreshold)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nudWorseThreshold)).BeginInit();
-            this.statusStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // txtOut
@@ -207,6 +207,44 @@
             this.panel_Graphs.Click += new System.EventHandler(this.panel_Graphs_Click);
             this.panel_Graphs.Resize += new System.EventHandler(this.panel_Graphs_Resize);
             // 
+            // statusStrip1
+            // 
+            this.statusStrip1.GripStyle = System.Windows.Forms.ToolStripGripStyle.Visible;
+            this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripSuccessLabel,
+            this.toolStripSuccessValue,
+            this.toolStripFailLabel,
+            this.toolStripFailValue});
+            this.statusStrip1.Location = new System.Drawing.Point(0, 150);
+            this.statusStrip1.Name = "statusStrip1";
+            this.statusStrip1.Size = new System.Drawing.Size(940, 22);
+            this.statusStrip1.TabIndex = 1;
+            this.statusStrip1.Text = "statusStrip1";
+            // 
+            // toolStripSuccessLabel
+            // 
+            this.toolStripSuccessLabel.Name = "toolStripSuccessLabel";
+            this.toolStripSuccessLabel.Size = new System.Drawing.Size(51, 17);
+            this.toolStripSuccessLabel.Text = "Success:";
+            // 
+            // toolStripSuccessValue
+            // 
+            this.toolStripSuccessValue.Name = "toolStripSuccessValue";
+            this.toolStripSuccessValue.Size = new System.Drawing.Size(13, 17);
+            this.toolStripSuccessValue.Text = "0";
+            // 
+            // toolStripFailLabel
+            // 
+            this.toolStripFailLabel.Name = "toolStripFailLabel";
+            this.toolStripFailLabel.Size = new System.Drawing.Size(28, 17);
+            this.toolStripFailLabel.Text = "Fail:";
+            // 
+            // toolStripFailValue
+            // 
+            this.toolStripFailValue.Name = "toolStripFailValue";
+            this.toolStripFailValue.Size = new System.Drawing.Size(13, 17);
+            this.toolStripFailValue.Text = "0";
+            // 
             // labelGraphIntro
             // 
             this.labelGraphIntro.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
@@ -286,72 +324,6 @@
             this.cbReverseDNS.UseVisualStyleBackColor = true;
             this.cbReverseDNS.CheckedChanged += new System.EventHandler(this.cbReverseDNS_CheckedChanged);
             // 
-            // menuMain
-            // 
-            this.menuMain.MenuItems.AddRange(new System.Windows.Forms.MenuItem[] {
-            this.mi_File,
-            this.mi_Export,
-            this.mi_Tools});
-            // 
-            // mi_File
-            // 
-            this.mi_File.Index = 0;
-            this.mi_File.MenuItems.AddRange(new System.Windows.Forms.MenuItem[] {
-            this.mi_File_Exit});
-            this.mi_File.Text = "&File";
-            // 
-            // mi_File_Exit
-            // 
-            this.mi_File_Exit.Index = 0;
-            this.mi_File_Exit.Text = "E&xit";
-            this.mi_File_Exit.Click += new System.EventHandler(this.mi_Exit_Click);
-            // 
-            // mi_Export
-            // 
-            this.mi_Export.Index = 1;
-            this.mi_Export.MenuItems.AddRange(new System.Windows.Forms.MenuItem[] {
-            this.mi_Export_snapshotGraphs});
-            this.mi_Export.Text = "E&xport";
-            // 
-            // mi_Export_snapshotGraphs
-            // 
-            this.mi_Export_snapshotGraphs.Index = 0;
-            this.mi_Export_snapshotGraphs.Text = "&Snapshot of graphs";
-            this.mi_Export_snapshotGraphs.Click += new System.EventHandler(this.mi_snapshotGraphs_Click);
-            // 
-            // mi_Tools
-            // 
-            this.mi_Tools.Index = 2;
-            this.mi_Tools.MenuItems.AddRange(new System.Windows.Forms.MenuItem[] {
-            this.mi_Tools_Options,
-            this.mi_Tools_deleteHost});
-            this.mi_Tools.Text = "&Tools";
-            // 
-            // mi_Tools_Options
-            // 
-            this.mi_Tools_Options.Index = 0;
-            this.mi_Tools_Options.Text = "&Options";
-            this.mi_Tools_Options.Click += new System.EventHandler(this.mi_Options_Click);
-            // 
-            // mi_Tools_deleteHost
-            // 
-            this.mi_Tools_deleteHost.Index = 1;
-            this.mi_Tools_deleteHost.Text = "Delete Current Host";
-            this.mi_Tools_deleteHost.Click += new System.EventHandler(this.mi_deleteHost_Click);
-            // 
-            // comboPingsPerSecond
-            // 
-            this.comboPingsPerSecond.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboPingsPerSecond.FormattingEnabled = true;
-            this.comboPingsPerSecond.Items.AddRange(new object[] {
-            "pings per second",
-            "seconds per ping"});
-            this.comboPingsPerSecond.Location = new System.Drawing.Point(95, 46);
-            this.comboPingsPerSecond.Name = "comboPingsPerSecond";
-            this.comboPingsPerSecond.Size = new System.Drawing.Size(132, 21);
-            this.comboPingsPerSecond.TabIndex = 5;
-            this.comboPingsPerSecond.SelectedIndexChanged += new System.EventHandler(this.selectPingsPerSecond_SelectedIndexChanged);
-            // 
             // txtHost
             // 
             this.txtHost.Location = new System.Drawing.Point(43, 21);
@@ -361,57 +333,6 @@
             this.toolTip1.SetToolTip(this.txtHost, "Enter a comma delimited IP address and/or host name list of destination(s) you wi" +
         "sh to monitor.\r\n\r\n You may click the blue Host label to choose a previously ente" +
         "red set name.");
-            // 
-            // groupBoxPingOpts
-            // 
-            this.groupBoxPingOpts.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.groupBoxPingOpts.Controls.Add(this.comboPingsPerSecond);
-            this.groupBoxPingOpts.Controls.Add(this.txtHost);
-            this.groupBoxPingOpts.Controls.Add(this.lblHost);
-            this.groupBoxPingOpts.Controls.Add(this.cbReverseDNS);
-            this.groupBoxPingOpts.Controls.Add(this.label2);
-            this.groupBoxPingOpts.Controls.Add(this.nudPingsPerSecond);
-            this.groupBoxPingOpts.Controls.Add(this.txtDisplayName);
-            this.groupBoxPingOpts.Controls.Add(this.btnStart);
-            this.groupBoxPingOpts.Controls.Add(this.label1);
-            this.groupBoxPingOpts.Controls.Add(this.cbTraceroute);
-            this.groupBoxPingOpts.Location = new System.Drawing.Point(3, 3);
-            this.groupBoxPingOpts.Name = "groupBoxPingOpts";
-            this.groupBoxPingOpts.Size = new System.Drawing.Size(600, 95);
-            this.groupBoxPingOpts.TabIndex = 23;
-            this.groupBoxPingOpts.TabStop = false;
-            this.groupBoxPingOpts.Text = "Ping Options:";
-            // 
-            // flowLayoutPanel1
-            // 
-            this.flowLayoutPanel1.AutoSize = true;
-            this.flowLayoutPanel1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.flowLayoutPanel1.Controls.Add(this.groupBoxPingOpts);
-            this.flowLayoutPanel1.Controls.Add(this.groupBoxGraphOpts);
-            this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 0);
-            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(940, 181);
-            this.flowLayoutPanel1.TabIndex = 24;
-            // 
-            // groupBoxGraphOpts
-            // 
-            this.groupBoxGraphOpts.Controls.Add(this.cbLastPing);
-            this.groupBoxGraphOpts.Controls.Add(this.cbJitter);
-            this.groupBoxGraphOpts.Controls.Add(this.cbAverage);
-            this.groupBoxGraphOpts.Controls.Add(this.cbAlwaysShowServerNames);
-            this.groupBoxGraphOpts.Controls.Add(this.cbMinMax);
-            this.groupBoxGraphOpts.Controls.Add(this.cbPacketLoss);
-            this.groupBoxGraphOpts.Controls.Add(this.nudBadThreshold);
-            this.groupBoxGraphOpts.Controls.Add(this.nudWorseThreshold);
-            this.groupBoxGraphOpts.Controls.Add(this.label8);
-            this.groupBoxGraphOpts.Controls.Add(this.label9);
-            this.groupBoxGraphOpts.Location = new System.Drawing.Point(3, 104);
-            this.groupBoxGraphOpts.Name = "groupBoxGraphOpts";
-            this.groupBoxGraphOpts.Size = new System.Drawing.Size(479, 74);
-            this.groupBoxGraphOpts.TabIndex = 24;
-            this.groupBoxGraphOpts.TabStop = false;
-            this.groupBoxGraphOpts.Text = "Graph Options:";
             // 
             // cbLastPing
             // 
@@ -549,42 +470,122 @@
             this.toolTip1.SetToolTip(this.label9, "Pings exceeding this threshold are drawn in bright yellow color, \r\nand the backgr" +
         "ound of the ping graph will be red tinted \r\nabove this point.");
             // 
-            // statusStrip1
+            // menuMain
             // 
-            this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripSuccessLabel,
-            this.toolStripSuccessValue,
-            this.toolStripFailLabel,
-            this.toolStripFailValue});
-            this.statusStrip1.Location = new System.Drawing.Point(0, 150);
-            this.statusStrip1.Name = "statusStrip1";
-            this.statusStrip1.Size = new System.Drawing.Size(940, 22);
-            this.statusStrip1.TabIndex = 1;
-            this.statusStrip1.Text = "statusStrip1";
+            this.menuMain.MenuItems.AddRange(new System.Windows.Forms.MenuItem[] {
+            this.mi_File,
+            this.mi_Export,
+            this.mi_Tools});
             // 
-            // toolStripSuccessLabel
+            // mi_File
             // 
-            this.toolStripSuccessLabel.Name = "toolStripSuccessLabel";
-            this.toolStripSuccessLabel.Size = new System.Drawing.Size(51, 17);
-            this.toolStripSuccessLabel.Text = "Success:";
+            this.mi_File.Index = 0;
+            this.mi_File.MenuItems.AddRange(new System.Windows.Forms.MenuItem[] {
+            this.mi_File_Exit});
+            this.mi_File.Text = "&File";
             // 
-            // toolStripSuccessValue
+            // mi_File_Exit
             // 
-            this.toolStripSuccessValue.Name = "toolStripSuccessValue";
-            this.toolStripSuccessValue.Size = new System.Drawing.Size(13, 17);
-            this.toolStripSuccessValue.Text = "0";
+            this.mi_File_Exit.Index = 0;
+            this.mi_File_Exit.Text = "E&xit";
+            this.mi_File_Exit.Click += new System.EventHandler(this.mi_Exit_Click);
             // 
-            // toolStripFailLabel
+            // mi_Export
             // 
-            this.toolStripFailLabel.Name = "toolStripFailLabel";
-            this.toolStripFailLabel.Size = new System.Drawing.Size(28, 17);
-            this.toolStripFailLabel.Text = "Fail:";
+            this.mi_Export.Index = 1;
+            this.mi_Export.MenuItems.AddRange(new System.Windows.Forms.MenuItem[] {
+            this.mi_Export_snapshotGraphs});
+            this.mi_Export.Text = "E&xport";
             // 
-            // toolStripFailValue
+            // mi_Export_snapshotGraphs
             // 
-            this.toolStripFailValue.Name = "toolStripFailValue";
-            this.toolStripFailValue.Size = new System.Drawing.Size(13, 17);
-            this.toolStripFailValue.Text = "0";
+            this.mi_Export_snapshotGraphs.Index = 0;
+            this.mi_Export_snapshotGraphs.Text = "&Snapshot of graphs";
+            this.mi_Export_snapshotGraphs.Click += new System.EventHandler(this.mi_snapshotGraphs_Click);
+            // 
+            // mi_Tools
+            // 
+            this.mi_Tools.Index = 2;
+            this.mi_Tools.MenuItems.AddRange(new System.Windows.Forms.MenuItem[] {
+            this.mi_Tools_Options,
+            this.mi_Tools_deleteHost});
+            this.mi_Tools.Text = "&Tools";
+            // 
+            // mi_Tools_Options
+            // 
+            this.mi_Tools_Options.Index = 0;
+            this.mi_Tools_Options.Text = "&Options";
+            this.mi_Tools_Options.Click += new System.EventHandler(this.mi_Options_Click);
+            // 
+            // mi_Tools_deleteHost
+            // 
+            this.mi_Tools_deleteHost.Index = 1;
+            this.mi_Tools_deleteHost.Text = "Delete Current Host";
+            this.mi_Tools_deleteHost.Click += new System.EventHandler(this.mi_deleteHost_Click);
+            // 
+            // comboPingsPerSecond
+            // 
+            this.comboPingsPerSecond.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboPingsPerSecond.FormattingEnabled = true;
+            this.comboPingsPerSecond.Items.AddRange(new object[] {
+            "pings per second",
+            "seconds per ping"});
+            this.comboPingsPerSecond.Location = new System.Drawing.Point(95, 46);
+            this.comboPingsPerSecond.Name = "comboPingsPerSecond";
+            this.comboPingsPerSecond.Size = new System.Drawing.Size(132, 21);
+            this.comboPingsPerSecond.TabIndex = 5;
+            this.comboPingsPerSecond.SelectedIndexChanged += new System.EventHandler(this.selectPingsPerSecond_SelectedIndexChanged);
+            // 
+            // groupBoxPingOpts
+            // 
+            this.groupBoxPingOpts.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.groupBoxPingOpts.Controls.Add(this.comboPingsPerSecond);
+            this.groupBoxPingOpts.Controls.Add(this.txtHost);
+            this.groupBoxPingOpts.Controls.Add(this.lblHost);
+            this.groupBoxPingOpts.Controls.Add(this.cbReverseDNS);
+            this.groupBoxPingOpts.Controls.Add(this.label2);
+            this.groupBoxPingOpts.Controls.Add(this.nudPingsPerSecond);
+            this.groupBoxPingOpts.Controls.Add(this.txtDisplayName);
+            this.groupBoxPingOpts.Controls.Add(this.btnStart);
+            this.groupBoxPingOpts.Controls.Add(this.label1);
+            this.groupBoxPingOpts.Controls.Add(this.cbTraceroute);
+            this.groupBoxPingOpts.Location = new System.Drawing.Point(3, 3);
+            this.groupBoxPingOpts.Name = "groupBoxPingOpts";
+            this.groupBoxPingOpts.Size = new System.Drawing.Size(600, 95);
+            this.groupBoxPingOpts.TabIndex = 23;
+            this.groupBoxPingOpts.TabStop = false;
+            this.groupBoxPingOpts.Text = "Ping Options:";
+            // 
+            // flowLayoutPanel1
+            // 
+            this.flowLayoutPanel1.AutoSize = true;
+            this.flowLayoutPanel1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.flowLayoutPanel1.Controls.Add(this.groupBoxPingOpts);
+            this.flowLayoutPanel1.Controls.Add(this.groupBoxGraphOpts);
+            this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 0);
+            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(940, 181);
+            this.flowLayoutPanel1.TabIndex = 24;
+            // 
+            // groupBoxGraphOpts
+            // 
+            this.groupBoxGraphOpts.Controls.Add(this.cbLastPing);
+            this.groupBoxGraphOpts.Controls.Add(this.cbJitter);
+            this.groupBoxGraphOpts.Controls.Add(this.cbAverage);
+            this.groupBoxGraphOpts.Controls.Add(this.cbAlwaysShowServerNames);
+            this.groupBoxGraphOpts.Controls.Add(this.cbMinMax);
+            this.groupBoxGraphOpts.Controls.Add(this.cbPacketLoss);
+            this.groupBoxGraphOpts.Controls.Add(this.nudBadThreshold);
+            this.groupBoxGraphOpts.Controls.Add(this.nudWorseThreshold);
+            this.groupBoxGraphOpts.Controls.Add(this.label8);
+            this.groupBoxGraphOpts.Controls.Add(this.label9);
+            this.groupBoxGraphOpts.Location = new System.Drawing.Point(3, 104);
+            this.groupBoxGraphOpts.Name = "groupBoxGraphOpts";
+            this.groupBoxGraphOpts.Size = new System.Drawing.Size(479, 74);
+            this.groupBoxGraphOpts.TabIndex = 24;
+            this.groupBoxGraphOpts.TabStop = false;
+            this.groupBoxGraphOpts.Text = "Graph Options:";
             // 
             // MainForm
             // 
@@ -610,15 +611,15 @@
             this.splitContainer1.ResumeLayout(false);
             this.panel_Graphs.ResumeLayout(false);
             this.panel_Graphs.PerformLayout();
+            this.statusStrip1.ResumeLayout(false);
+            this.statusStrip1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nudBadThreshold)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudWorseThreshold)).EndInit();
             this.groupBoxPingOpts.ResumeLayout(false);
             this.groupBoxPingOpts.PerformLayout();
             this.flowLayoutPanel1.ResumeLayout(false);
             this.groupBoxGraphOpts.ResumeLayout(false);
             this.groupBoxGraphOpts.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.nudBadThreshold)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nudWorseThreshold)).EndInit();
-            this.statusStrip1.ResumeLayout(false);
-            this.statusStrip1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
